@@ -1,7 +1,7 @@
-public class ZeldaList {
+public class LinkList {
     public static Node front;
 
-    ZeldaList() {
+    LinkList() {
         front = null;
     }
 
@@ -32,7 +32,7 @@ public class ZeldaList {
 
     public static void addNodeAtEndOfList(int num) {
         Node end;
-        if(num == 0) {
+        if(front == null) {
             front = makeNode(num);
         }
         else {
@@ -41,7 +41,16 @@ public class ZeldaList {
         }
     }
 
-    public static Node findSpot(int num) {
+    public static Node findSpotForAdd(int num) {
+        Node current;
+        current = front;
+        while(num > current.data) {
+            current = current.next;
+        }
+        return current;
+    }
+
+    public static Node findSpotForDelete(int num) {
         Node current, previous;
         current = front;
         previous = current;
@@ -65,12 +74,18 @@ public class ZeldaList {
         temp.next = null;
     }
 
+    public static void deleteFront(Node spot) {
+        front = spot.next;
+            spot.next = null;
+    }
+
     public static void showList() {
         Node current = front;
         while(current.next != null) {
             System.out.print(current.data + " ");
             current = current.next;
         }
+        System.out.print(current.data);
         System.out.println();
     }
 
