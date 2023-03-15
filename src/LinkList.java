@@ -68,7 +68,7 @@ public class LinkList {
     }
 
     public static void deleteAfterSpot(Node spot) {
-        Node temp, nextNode;
+        Node temp;
         temp = spot.next;
         spot.next = temp.next;
         temp.next = null;
