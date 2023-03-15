@@ -55,7 +55,7 @@ public class Main extends LinkList {
                 numToAddAfter = input.nextInt();
                 SpotToAddAfter = findSpotForAdd(numToAddAfter);
                 addAfterSpot(SpotToAddAfter, numToAdd);
-                System.out.println("Updated List with added number:");
+                System.out.println("\n"+"Updated List with added number:");
                 showList();
                 System.out.println();
             } else if (addWhereChoice == 3) {                                                                       //choosing to add at the end of the list, calls method to-
